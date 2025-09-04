@@ -42,7 +42,7 @@ export default function CocaFest() {
             </p>
 
             <Link
-              href="#"
+              href="/coca-cola-flow-fest-cdmx-boletos"
               className="bg-[#ff1a37] text-white rounded-md py-2 px-5 inline-block hover:bg-[#d1031e] transition-all duration-300 ease-in-out"
             >
               Buscar boletos
