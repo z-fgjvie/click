@@ -13,9 +13,11 @@ import { IoTicketOutline } from "react-icons/io5";
 import Footer from "@/components/footer";
 import { useReservaStore } from "@/lib/store";
 import { useRouter } from "next/navigation";
+import Loading from "@/components/loading";
 
 export default function EventoEspecifico({ params }) {
   const [cantidad, setCantidad] = useState(2);
+  const [loading, setLoading] = useState(false);
   const { setReserva } = useReservaStore();
   const { slug } = React.use(params);
   const event = dataEventos.find((ev) => ev.slug === slug);
@@ -41,15 +43,24 @@ export default function EventoEspecifico({ params }) {
       total: ticket.price * cantidad,
     });
 
-    router.push(`/coca-cola-flow-fest-cdmx-boletos/confirmacion/${event.slug}`);
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      router.push(
+        `/coca-cola-flow-fest-cdmx-boletos/confirmacion/${event.slug}`
+      );
+    }, 3000);
   };
 
   if (!event) {
-    <h2>Evento no encontrado</h2>;
+    <h2 className="text-center text-2xl font-semibold mt-10">
+      Evento no encontrado
+    </h2>;
   }
 
   return (
     <>
+      {loading && <Loading />}
       <section>
         <div className="bg-[#121212] px-5">
           <div className="max-w-[75rem] mx-auto pt-5 pb-8">
