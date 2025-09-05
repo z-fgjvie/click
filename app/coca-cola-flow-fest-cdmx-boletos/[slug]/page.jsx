@@ -16,7 +16,7 @@ import { useRouter } from "next/navigation";
 import Loading from "@/components/loading";
 
 export default function EventoEspecifico({ params }) {
-  const [cantidad, setCantidad] = useState(2);
+  const [cantidad, setCantidad] = useState(1);
   const [loading, setLoading] = useState(false);
   const { setReserva } = useReservaStore();
   const { slug } = React.use(params);
@@ -28,7 +28,7 @@ export default function EventoEspecifico({ params }) {
   };
 
   const disminuirCantidad = (e) => {
-    setCantidad((prev) => (prev > 2 ? prev - 1 : 2));
+    setCantidad((prev) => (prev > 2 ? prev - 1 : 1));
   };
 
   const handleBuscarBoletos = (ticket) => {
