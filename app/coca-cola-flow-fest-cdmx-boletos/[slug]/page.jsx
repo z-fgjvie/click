@@ -65,7 +65,13 @@ export default function EventoEspecifico({ params }) {
         <div className="bg-[#121212] px-5">
           <div className="max-w-[75rem] mx-auto pt-5 pb-8">
             <div className="flex items-center justify-between">
-              <p className="mb-3 text-white">Logo</p>
+              <Image
+                src="/logo-clickboletosp.png"
+                alt="logo click boletos"
+                width="80"
+                height="80"
+                onClick={() => router.push("/")}
+              />
               <div className="flex items-center gap-1 text-white">
                 <Image
                   src="/bandera.png"

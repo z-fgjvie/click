@@ -12,7 +12,13 @@ export default function Footer() {
       <div className="max-w-[75rem] mx-auto">
         <div className="flex md:justify-between items-center flex-col justify-center  md:flex-row">
           <div>
-            <p className="mb-5 md:mb-3 text-white text-lg text-center">Logo</p>
+            <Image
+              src="/logo-clickboletosp.png"
+              alt="logo click boletos"
+              width="90"
+              height="90"
+              className="mb-5"
+            />
             <div className="text-white flex items-center gap-3 text-2xl mb-14 md:mb-0">
               <FaFacebook />
               <FaInstagram />

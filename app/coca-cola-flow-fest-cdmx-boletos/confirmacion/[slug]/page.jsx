@@ -23,13 +23,40 @@ export default function PageConfirmacionSlug() {
     );
   }
 
+  // Número de WhatsApp (mejor si lo pones en process.env)
+  const numero = "5217779200093";
+
+  // Mensaje que quieres enviar
+  const mensaje = `
+🎟️ *Reserva de Boletos*
+
+📌 Evento: ${reserva.name}
+📅 Fecha: ${reserva.ticket.phase}
+🎫 Sección: ${reserva.ticket.section}
+👥 Cantidad: ${reserva.cantidad}
+💰 Precio unitario: $${reserva.ticket.price} MXN
+💵 Total: $${reserva.total} MXN
+
+✅ Quiero confirmar mi compra de boletos 🙌
+`;
+
+  // URL de WhatsApp
+  const urlWhatsApp = `https://wa.me/${numero}?text=${encodeURIComponent(
+    mensaje
+  )}`;
+
   return (
     <>
       <section>
         <div className="bg-[#121212] px-5">
           <div className="max-w-[75rem] mx-auto pt-5 pb-8">
             <div className="flex items-center justify-between">
-              <p className="mb-3 text-white">Logo</p>
+              <Image
+                src="/logo-clickboletosp.png"
+                alt="logo click boletos"
+                width="90"
+                height="90"
+              />
               <div className="flex items-center gap-1 text-white">
                 <Image
                   src="/bandera.png"
@@ -133,9 +160,14 @@ export default function PageConfirmacionSlug() {
                   </p>
                 </div>
 
-                <button className="bg-[#ff1a37] font-semibold w-full py-[0.625rem] text-white rounded-sm text-[1.0625rem] mb-10 cursor-pointer hover:bg-red-600 transition-all duration-200 ease-in-out">
+                <a
+                  href={urlWhatsApp}
+                  className="bg-[#ff1a37] font-semibold w-full py-[0.625rem] text-white rounded-sm text-[1.0625rem] mb-10 cursor-pointer block text-center hover:bg-red-600 transition-all duration-200 ease-in-out"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Comprar boletos
-                </button>
+                </a>
 
                 <h2 className="text-xl font-semibold mb-4">Otras opciones</h2>
 

@@ -1,7 +1,11 @@
+"use client";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React from "react";
 import { TbLocation } from "react-icons/tb";
 
 export default function HeaderBoletos() {
+  const router = useRouter();
   return (
     <header>
       <div className="bg-black py-2">
@@ -11,9 +15,15 @@ export default function HeaderBoletos() {
         </div>
       </div>
 
-      <div className="bg-[#ff1a37] py-5 px-5 ">
+      <div className="bg-[#ff1a37] py-4 px-5 ">
         <div className="max-w-[75rem] mx-auto">
-          <h1>Logo</h1>
+          <Image
+            src="/logo-clickboletosp.png"
+            alt="logo click boletos"
+            width="90"
+            height="90"
+            onClick={() => router.push("/")}
+          />
         </div>
       </div>
     </header>
