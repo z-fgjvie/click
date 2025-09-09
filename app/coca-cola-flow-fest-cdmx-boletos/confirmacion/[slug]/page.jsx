@@ -24,7 +24,7 @@ export default function PageConfirmacionSlug() {
   }
 
   // Número de WhatsApp (mejor si lo pones en process.env)
-  const numero = "5213319673903";
+  const numero = "523319673903";
 
   // Mensaje que quieres enviar
   const mensaje = `
